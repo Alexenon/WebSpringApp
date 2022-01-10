@@ -1,17 +1,27 @@
 package com.xenon;
 
+import com.xenon.music.Music;
+import com.xenon.music.MusicPlayer;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class TestSpring {
 
     public static void main(String[] args) {
+
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
                 "applicationContext.xml"
         );
 
-        TestBean testBean = context.getBean("testBean", TestBean.class);
+        /*Dependency Injection
+            Music music = context.getBean("musicBean", Music.class);
+            MusicPlayer musicPlayer = new MusicPlayer(music);
+            musicPlayer.playMusic();
+        */
 
-        System.out.println(testBean.getName());
+        MusicPlayer music = context.getBean("musicPlayer", MusicPlayer.class);
+        music.playMusic();
+
+
 
         context.close();
     }
