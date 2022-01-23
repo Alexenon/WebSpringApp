@@ -1,7 +1,7 @@
 package com.xenon.music;
 
 /**
- * Optimize: Me
+ * Interface for all types of music
  * */
 public interface Music {
 

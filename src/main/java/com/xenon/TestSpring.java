@@ -1,6 +1,5 @@
 package com.xenon;
 
-import com.xenon.music.Music;
 import com.xenon.music.MusicPlayer;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
