@@ -3,6 +3,8 @@ package com.xenon.music;
 public class MusicPlayer {
 
     private Music music;
+    private String name;
+    private int volume;
 
     public MusicPlayer(){
         /* Empty constructor */
@@ -10,6 +12,22 @@ public class MusicPlayer {
 
     public MusicPlayer(Music music) {
         this.music = music;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getVolume() {
+        return volume;
+    }
+
+    public void setVolume(int volume) {
+        this.volume = volume;
     }
 
     public void setMusic(Music music) {

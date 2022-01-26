@@ -11,7 +11,7 @@ public class TestSpring {
                 "applicationContext.xml"
         );
 
-        /*Dependency Injection
+        /* Dependency Injection
             Music music = context.getBean("musicBean", Music.class);
             MusicPlayer musicPlayer = new MusicPlayer(music);
             musicPlayer.playMusic();
@@ -19,7 +19,8 @@ public class TestSpring {
 
         MusicPlayer music = context.getBean("musicPlayer", MusicPlayer.class);
         music.playMusic();
-
+        System.out.println(music.getName());
+        System.out.println(music.getVolume());
 
 
         context.close();
