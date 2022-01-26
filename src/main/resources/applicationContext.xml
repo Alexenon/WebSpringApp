@@ -11,15 +11,30 @@
     <context:property-placeholder location="musicPlayer.properties"/>
 
     <!-- Creates an object of type ClassicMusic -->
-    <bean id="musicBean"
+    <bean id="classicMusicBean"
           class="com.xenon.music.ClassicMusic">
     </bean>
+
+    <bean id="popMusicBean"
+          class="com.xenon.music.PopMusic">
+    </bean>
+
+    <bean id="rockMusicBean"
+          class="com.xenon.music.RockMusic">
+    </bean>
+
 
     <!-- Creates an object of type MusicPlayer and calls
     method setMusic sending the object created above -->
     <bean id="musicPlayer"
           class="com.xenon.music.MusicPlayer">
-        <property name="music" ref="musicBean"/>
+        <property name="musicList">
+            <list>
+                <ref bean="popMusicBean"/>
+                <ref bean="classicMusicBean"/>
+                <ref bean="rockMusicBean"/>
+            </list>
+        </property>
 
         <property name="name" value="${musicPlayer.name}"/>
         <property name="volume" value="${musicPlayer.volume}"/>
